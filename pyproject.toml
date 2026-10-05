@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "idleo-assignments"
+version = "0.1.0"
+description = "IDLEO modular assignment scaffolds"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "pytest",
+  "rasterio",
+  "scikit-learn",
+  "torch",
+  "torchgeo",
+  "torchvision",
+  "gdown",
+  "nbformat",
+  "nbclient",
+  "ipykernel",
+  "ipywidgets",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 80
+extend-exclude = ["data", "outputs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+# The generator contains long Markdown and notebook-code string literals.
+"tools/build_notebooks.py" = ["E501"]

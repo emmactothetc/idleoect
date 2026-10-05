@@ -1,0 +1,60 @@
+---
+title: "2026 assignments: setup and progression"
+---
+
+Use one complete **assignments** folder for all three assignments. The folder
+contains notebooks, shared student source, checks, a self-contained catalog, and
+output directories. An individual notebook is not a complete assignment.
+
+## Primary platform: 2i2c
+
+Upload and extract the student folder as:
+
+```text
+/home/jovyan/assignments
+```
+
+Open `assignment1.ipynb` from the folder root and run the setup cell. The
+cell adds `assignments/src` to Python's import path and checks the modules in
+the current hub image. It does not build a virtual environment or register a
+kernel. Only if imports are missing, run the documented `requirements.txt`
+fallback from a terminal.
+
+## Optional Colab fallback
+
+Put the complete folder in **My Drive/IDLEO/assignments**. The notebook mounts
+Drive and uses the same source, protocols, outputs, and checkpoints. Runtime data
+may need downloading after a reset. Do not move only the notebook between systems.
+
+## Progressive assessment
+
+1. **Assignment 1** implements MNIST, EuroSAT100, and Planet dataloaders and freezes exact
+   membership/preprocessing in `data_protocol.json`.
+2. **Assignment 2** imports that A1 module and protocol, then implements a
+   one-channel MNIST ResNet18, a 13-band classifier, a five-encoder-stage/five-decoder-stage three-class U-Net,
+   and complete training/validation loops.
+3. **Assignment 3** imports the same pipeline and models, verifies source,
+   protocol, and checkpoint hashes, then runs held-out MNIST/EO evaluation and
+   georeferenced export.
+
+Students must not copy separate dataloader or model definitions between notebooks.
+The shared modules are the implementation; notebooks provide experiments,
+evidence, critical questions, and explanations.
+
+Every revised notebook includes an explicit 100-point rubric. Points are tied to
+observable implementation behavior, saved evidence, and conceptual explanations.
+
+## Coding assistance
+
+Agents may support planning, scoped implementation, debugging, and review. Work
+one TODO at a time, inspect and test suggestions, record rejected advice, and add
+an independent counterexample. Students remain responsible for explaining and
+modifying all submitted code. Complete `AI_USE.md`, including a no-AI statement
+when appropriate.
+
+## Submission
+
+Submit executed notebooks, `src/student_*.py`, the data protocol and experiment
+manifest, small histories/metrics, diagrams, figures, model card, and AI-use
+record. Keep raw data, environments, and large model/raster artifacts outside Git;
+provide hashes and instructor-approved retrieval instructions.

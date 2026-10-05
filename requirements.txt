@@ -1,0 +1,13 @@
+numpy
+pandas
+matplotlib
+rasterio
+torch
+torchvision
+torchgeo
+scikit-learn
+pytest
+nbformat
+nbclient
+gdown
+ipywidgets
